@@ -16,4 +16,7 @@ IOUtils
         writeLines(lines, lineEnding, output, Charset.defaultCharset());
  }
  
+ JSON.parse(字符串)会将字符串转化为JSONObject对象
+ 总结：一定要学会使用debug判断是否正确，在检验你想检验的变量的时候要在最后定义好，语句会执行到断点的上面
+ 
  
