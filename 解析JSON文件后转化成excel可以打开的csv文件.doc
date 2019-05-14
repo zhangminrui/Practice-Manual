@@ -1,0 +1,19 @@
+Java读取本地json文件
+File file = new File(path);
+FileInputStream inputStream = new FileInputStream(file);
+将读取的输入流数据保存在List<String>中,使用IOUtils类简化了IO
+IOUtils
+ 读取文件内容，返回List<String>
+ public static List<String> readLines(InputStream input) throws IOException {
+        return readLines(input, Charset.defaultCharset());
+ }
+ 新建List<String> lines = new ArrayList<>();
+ 新建文件(新建的文件必须是CSV类型的，CSV类型可以用EXCEL打开)不能直接创建为xslx文件会出现乱码
+ File newFile = new File(path);
+ FileOutputStream outputStream = new FileOutputStream(newFile);
+ 把新建的集合(含有数据的)放到新建的文件中，需要一个List<String>类的集合,输出流
+ public static void writeLines(Collection<?> lines, String lineEnding, OutputStream output) throws IOException {
+        writeLines(lines, lineEnding, output, Charset.defaultCharset());
+ }
+ 
+ 
